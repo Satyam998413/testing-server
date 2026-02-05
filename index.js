@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors'); // <-- import cors
 require("dotenv").config();
-const { httpLogger } = require("./src/lib/winstonLogger");
+const path = require("path");
 
 const app = express();
 const PORT = 8000;
@@ -10,11 +10,11 @@ const PORT = 8000;
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send({ data: 'Hello World' });
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 app.get('/about', (req, res) => {
-  res.send({ data: 'About route 1 ' });
+  res.send({ data: 'About route 2 ' });
 });
 
 // // Routes
