@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed":"node src/seed/seed.js"
   },
   "repository": {
     "type": "git",
@@ -20,10 +22,15 @@
   },
   "homepage": "https://github.com/Satyam998413/testing-server#readme",
   "dependencies": {
+    "axios": "^1.13.4",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "googleapis": "^171.3.0",
+    "mongoose": "^9.1.6",
+    "nodemon": "^3.1.11",
     "replicate": "^1.4.0",
+    "socket.io": "^4.8.3",
     "winston": "^3.19.0",
     "winston-daily-rotate-file": "^5.0.0"
   }
