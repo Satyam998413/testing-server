@@ -4,11 +4,6 @@ require("dotenv").config();
 const path = require("path");
 const { connectDB } = require('./src/config/database');
 
-const conversationRoutes = require('./src/routes/conversations.routes');
-const messageRoutes = require('./src/routes/message.routes');
-const imageRoutes = require('./src/routes/image.routes');
-const videoRoutes = require('./src/routes/video.routes');
-const seedDatabase = require('./src/seed/seed');
 
 const app = express();
 
@@ -22,6 +17,13 @@ app.get('/', (req, res) => {
 app.get('/api/about', (req, res) => {
   res.send({ data: `About route 2 ${process.env.MONGO_URI1}` });
 });
+
+const conversationRoutes = require('./src/routes/conversations.routes');
+const messageRoutes = require('./src/routes/message.routes');
+const imageRoutes = require('./src/routes/image.routes');
+const videoRoutes = require('./src/routes/video.routes');
+const seedDatabase = require('./src/seed/seed');
+
 
 // // Routes
 app.use("/api/image", imageRoutes);
