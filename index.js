@@ -1,8 +1,7 @@
 const express = require('express');
 const cors = require('cors'); // <-- import cors
-const path = require("path");
 require("dotenv").config();
-const { httpLogger } = require("./src/lib/winstonLogger");
+// const { httpLogger } = require("./src/lib/winstonLogger");
 
 const app = express();
 const PORT = 8000;
@@ -18,9 +17,9 @@ app.get('/about', (req, res) => {
   res.send({ data: 'About route 🎉 ' });
 });
 
-// Routes
-app.use("/api/image", require("./src/routes/image.routes"));
-app.use("/api/video", require("./src/routes/video.routes"));
+// // Routes
+// app.use("/api/image", require("./src/routes/image.routes"));
+// app.use("/api/video", require("./routes/video.routes"));
 
 app.listen(PORT, () => {
   console.log(`✅ Server is running on port ${PORT}`);
